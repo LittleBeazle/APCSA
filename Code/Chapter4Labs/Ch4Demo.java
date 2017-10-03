@@ -63,56 +63,56 @@ public class Ch4Demo
 
 	public static void main(String[] args)
 	{
-	Car c1, c2, c3, c4;
-	String faultdriver;
-	String color = new String("white");
-	final int NRCARS = 5;
-	int i, randdriver;
-	Car[] car_array = new Car[NRCARS];
+		Car c1, c2, c3, c4;
+		String faultdriver;
+		String color = new String("white");
+		final int NRCARS = 5;
+		int i, randdriver;
+		Car[] car_array = new Car[NRCARS];
 
-	// previous declaration is for an array, described in chapter 6
-	// next for loop loads 3 vehicles into the array, passing their
-	// constructor the necessary information
-	//
-	for (i = 0; i < NRCARS; i++)
-	{
-	 car_array[0] = new Car("Foy","Rav4", "Toyota", 150000, 32, 2003, 2000, 555444);
-	 car_array[1] = new Car("Crattie", "Model T", "Ford", 590000, 4, 1908, 13,1);
-	 car_array[2] = new Car("Hawkins", "Jeep", "Chrysler", 300, 26, 2014, 9000,123432);
-	 car_array[3] = new Car("Arnold", "Van?", "Ford", 190000, 28, 2010, 8000, 191919);
-	 car_array[4] = new Car("Blevins", "SUV", "Lamborghini", 10, 100, 2030, 9999999, 010101);
-	} // end of for
+		// previous declaration is for an array, described in chapter 6
+		// next for loop loads 3 vehicles into the array, passing their
+		// constructor the necessary information
+		//
+		for (i = 0; i < NRCARS; i++)
+		{
+		 car_array[0] = new Car("Foy","Rav4", "Toyota", 150000, 32, 2003, 2000, 555444);
+		 car_array[1] = new Car("Crattie", "Model T", "Ford", 590000, 4, 1908, 13,1);
+		 car_array[2] = new Car("Hawkins", "Jeep", "Chrysler", 300, 26, 2014, 9000,123432);
+		 car_array[3] = new Car("Arnold", "Van?", "Ford", 190000, 28, 2010, 8000, 191919);
+		 car_array[4] = new Car("Blevins", "SUV", "Lamborghini", 10, 100, 2030, 9999999, 010101);
+		} // end of for
 
-	// Following code is an example for Exploration 5
-	// method fault determines whose fault it is if car1 strikes car2
-	c1 = car_array[0];
-	c2 = car_array[2];
-	faultdriver = c1.fault(c2);
-	System.out.print("When " + (c1.Owner) + " strikes " + (c2.Owner));
- 	System.out.println(" from behind, "+ faultdriver + " is at fault");
+		// Following code is an example for Exploration 5
+		// method fault determines whose fault it is if car1 strikes car2
+		c1 = car_array[0];
+		c2 = car_array[2];
+		faultdriver = c1.fault(c2);
+		System.out.print("When " + (c1.Owner) + " strikes " + (c2.Owner));
+	 	System.out.println(" from behind, "+ faultdriver + " is at fault");
 
-	// exploration 1
-	System.out.println(c1.Color);
+		// exploration 1
+		System.out.println(c1.Color);
 
-	// exploration 2
-	c1.Color = color;
+		// exploration 2
+		c1.Color = color;
 
-	// exploration 3
-	System.out.println(c1.getValue());
+		// exploration 3
+		System.out.println(c1.getValue());
 
-	// exploration 5
-	c3 = car_array[1];
-	c4 = car_array[3];
-	faultdriver = c3.fault(c4);
-	System.out.println("When " + (c3.Owner) + " strikes " + (c4.Owner) + " from behind, " + faultdriver + " is at fault.");
+		// exploration 5
+		c3 = car_array[1];
+		c4 = car_array[3];
+		faultdriver = c3.fault(c4);
+		System.out.println("When " + (c3.Owner) + " strikes " + (c4.Owner) + " from behind, " + faultdriver + " is at fault.");
 
-	// exploration 6
-	for (i = 0; i < 5; i++) {
-		System.out.println(car_array[i]);
-	}
+		// exploration 6
+		for (i = 0; i < 5; i++) {
+			System.out.println(car_array[i]);
+		}
 
-	// exploration 7
-	c1.adjustValue(100000);
+		// exploration 7
+		c1.adjustValue(100000);
 	} // end of main
 
 }  // end of class
