@@ -118,7 +118,10 @@ public class Ch4Demo
 		System.out.println("The pre-wreck value of car one is " + c1.getValue() + " and the pre-wreck value of car two is " + c2.getValue() + ".");
 		c1.adjustValue(-10000);
 		c2.adjustValue(-10000);
-		System.out.println("Are the two cars totaled? \n" + c1.bothTotaled(c2));
+		if (c1.bothTotaled(c2))
+			System.out.println("Both cars are totaled.");
+		else
+			System.out.println("Both cars are not totaled.");
 
 	} // end of main
 
