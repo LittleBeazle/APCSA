@@ -67,6 +67,9 @@ public class Car
 		return Mpg_hwy;
 	}
 
+	public void changeMileage(int dMpgValue)	{
+		Mpg_hwy = dMpgValue;
+	}
 // following method is used to who is at fault when a car strikes
 // a second car.  Car c1 is the second car
 
@@ -88,7 +91,7 @@ public class Car
 
 	 v1 = c1.Value;
 	 v2 = this.Value;
-	 bothdone = ((v1 < 0) && (v2 < 0));
+	 bothdone = ((v1 <= 0) && (v2 <= 0));
 	 return bothdone;
 	}  // end of method wreck
 
