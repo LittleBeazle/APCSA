@@ -11,7 +11,7 @@
 // intlist with random integers between 0 and 100 inclusive.
 // This code addition will be in main, where indicated by a
 // comment.  Refer to elements in intlist by using brackets;
-// i.e. intlist[x] = 
+// i.e. intlist[x] =
 //
 // Exploration 2: Run the code, notice what happens when two integers are swapped vs
 // two integers in an array.  Code will print out "before swap" twice, once before calling
@@ -39,7 +39,7 @@
 
 import java.util.*;
 
-public class CH5Demo 
+public class CH5Demo
 {
 	static public UserPrompts mylanguage = new Language();
 	static int languageindicator = 1;
@@ -47,12 +47,12 @@ public class CH5Demo
 
 // ************************************************************************
 // method swap: swaps two integers, prints out pre-swap and post swap values
-	
+
  public static void swap (int x, int y)
  {
 	int temp;
 	String swapstring;
-	
+
 	swapstring = mylanguage.beforeSwap() + x + " , " + y;
 	System.out.println(swapstring);
 	temp = x;
@@ -69,7 +69,7 @@ public class CH5Demo
  {
 	 int temp;
 	 String outstring;
-	 
+
 	 outstring = mylanguage.beforeSwap();
 	 System.out.println(outstring);
 	 for (int i = 0; i < 20; i++)
@@ -77,7 +77,7 @@ public class CH5Demo
 		 System.out.print(integerlist[i] + ", ");
 		 if (((i + 1) % 10) == 0) System.out.println();
 		}
-	 
+
 	 temp = integerlist[x];
 	 integerlist[x] = integerlist[y];
 	 integerlist[y] = temp;
@@ -88,7 +88,7 @@ public class CH5Demo
 		 System.out.print(integerlist[i] + ", ");
 		 if (((i + 1) % 10) == 0) System.out.println();
 		}
-	 
+
  }
 //************************************************************************
  public static void main(String[] args)
@@ -98,13 +98,15 @@ public class CH5Demo
 	boolean done = false;
 	int[] intlist = new int[20];
 	int n1, n2;
-	
+	Random rgen = new Random();
+
 	// Exploration 1
 	// Insert code here that loads intlist, an array of 20
 	// elements, with random integers between 0 and 100 inclusive
-	
+	for (int i = 0; i < 20; i++)	{
+		intlist[i] = rgen.nextInt(101);
+	}
 
-	
 	while (!done)
 	{
 	selection = mylanguage.menu();
@@ -113,7 +115,7 @@ public class CH5Demo
 	case 0:
 		done = true;
 		break;
-	case 1:        			       
+	case 1:
 		outstring = mylanguage.beforeSwap();
 		System.out.println(outstring);
 		swap(1, 8);
@@ -141,7 +143,7 @@ public class CH5Demo
 		if (((i + 1) % 10) == 0) System.out.println();
 		}
 		break;
-	
+
 // EXPLORATION 4: After choosing two languages and looking
 // up necessary vocabulary words, you will replace Dutch and
 // Russian in case 3.
@@ -158,7 +160,7 @@ public class CH5Demo
 		if ((languageindicator % 3) == 1)
 		  mylanguage = new Language();
 		if ((languageindicator % 3) == 2)
-		 mylanguage = new Russian();   
+		 mylanguage = new Russian();
 
 		break;
 	case 4:			// reload array
@@ -180,5 +182,5 @@ public class CH5Demo
 	} // end of switch
 	} // end of while !done
  } // end of main
- 
+
 }  // end of class

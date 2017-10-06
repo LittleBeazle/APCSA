@@ -108,7 +108,7 @@ public class Ch4Demo
 
 		// exploration 6
 		for (i = 0; i < 5; i++) {
-			System.out.println(car_array[i]);
+			car_array[i].readInfo();
 		}
 
 		// exploration 7
