@@ -36,7 +36,7 @@
 // This will require adding a new method to interface "UserPrompts", and a new language specific
 // method to each of the three language classes; Language plus your two classes.
 //
-
+/*
 import java.util.*;
 
 public class CH5Demo
@@ -184,3 +184,4 @@ public class CH5Demo
  } // end of main
 
 }  // end of class
+*/
