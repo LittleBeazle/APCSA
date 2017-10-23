@@ -61,19 +61,18 @@ public class Account
   //----------------------------------------------
   // Deducts $10 service fee
   //----------------------------------------------
-  public void chargeFee()
+  public double chargeFee()
   {
-
-
+    balance -= 10;
+    return balance;
   } // end of chargeFee
 
   //----------------------------------------------
   // Changes the name on the account
   //----------------------------------------------
   public void changeName(String newName)
-
   {
-
+    name = newName;
   } // end of changeName
 
 } // end of class
