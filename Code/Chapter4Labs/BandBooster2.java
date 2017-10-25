@@ -22,5 +22,5 @@ public class BandBooster2 {
     System.out.println(b2.name + ":\t" + b2.numBoxes + " boxes");
     System.out.println();
 
-  }
+  } // end of main
 } // end of class
