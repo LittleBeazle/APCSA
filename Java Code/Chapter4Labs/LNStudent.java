@@ -27,7 +27,7 @@ public int addRef(int num)  {
 }
 // paragraph 8 method code goes below this line
 public String toString()  {
-     return ("Name: " + name + "\nStudent ID: " + StudentID + "\nClass: " + classnum + "\nPhone: " + phonenum + "\nGPA: " + gpa + "\nReferalls: " + nrwriteups); 
+     return ("Name: " + name + "\nStudent ID: " + StudentID + "\nClass: " + classnum + "\nPhone: " + phonenum + "\nGPA: " + gpa + "\nReferrals: " + nrwriteups); 
 }
 
 }  // end of class
