@@ -76,11 +76,11 @@ public class Ch4Demo
 		//
 		for (i = 0; i < NRCARS; i++)
 		{
-		 car_array[0] = new Car("Foy", "Rav4", "Toyota", 				 150000, 32, 	2003, 2000, 	 555444);
-		 car_array[1] = new Car("Crattie", "Model T", "Ford", 	 590000, 4, 	1908, 13,			 1);
-		 car_array[2] = new Car("Hawkins", "Jeep", "Chrysler", 	 300, 	 26, 	2014, 9000,		 123432);
-		 car_array[3] = new Car("Arnold", "Van?", "Ford", 			 190000, 28, 	2010, 8000, 	 191919);
-		 car_array[4] = new Car("Blevins", "SUV", "Lamborghini", 10, 		 100, 2030, 2000000, 010101);
+		 car_array[0] = new Car("Foy", "Rav4", "Toyota", 		  150000, 32, 	2003, 2000, 	 555444);
+		 car_array[1] = new Car("Crattie", "Model T", "Ford", 	  590000, 4, 	1908, 13,		 1);
+		 car_array[2] = new Car("Hawkins", "Jeep", "Chrysler",   300, 	26, 	2014, 9000,	 123432);
+		 car_array[3] = new Car("Arnold", "Van?", "Ford", 	  190000, 28, 	2010, 8000, 	 191919);
+		 car_array[4] = new Car("Blevins", "SUV", "Lamborghini", 10,     100, 2030, 2000000,  010101);
 		} // end of for
 
 		// Following code is an example for Exploration 5
