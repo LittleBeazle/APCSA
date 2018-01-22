@@ -145,14 +145,13 @@ public class CH5Demo {
                     // a language selection algorithm of your design
 
                 case 3: // change to second or third language
-                    languageindicator++;
-                    if ((languageindicator % 3) == 0)
-                        mylanguage = new LanguageZH();
-                    if ((languageindicator % 3) == 1)
-                        mylanguage = new Language();
-                    if ((languageindicator % 3) == 2)
-                        //mylanguage = new Russian();
-
+                    languageindicator = mylanguage.langMenu();
+                    if (languageindicator == 1)
+                         mylanguage = new Language();
+                    if (languageindicator == 2)
+                         mylanguage = new LanguageZH();
+                    if (languageindicator == 3)
+                         mylanguage = new LanguageDE();
                     break;
                 case 4: // reload array
                     Random generator4 = new Random();

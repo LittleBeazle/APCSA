@@ -24,6 +24,20 @@ public class Language implements UserPrompts {
         }
         return selection;
     }
+    public int langMenu() {
+         int langSel = 1;
+         System.out.println("\nChange Language");
+         System.out.println("English    1");
+         System.out.println("\u4e2d\u6587       2");
+         System.out.println("Deutsch    3");
+         System.out.println("Enter Option: ");
+         langSel = invalue.nextInt();
+         if ((langSel < 1) || (langSel > 3)) {
+             System.out.println("Invalid selection, defaulting to English");
+             langSel = 1;
+         }
+         return langSel;
+    }
 
     //	@Override
     public int idSwapNrs(int[] intlist) {

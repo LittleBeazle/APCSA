@@ -3,6 +3,7 @@
 // to your two language class files
 public interface UserPrompts {
     public int menu();
+    public int langMenu();
     public int idSwapNrs(int[] intlist);
     public String toString();
     public String printHeader();

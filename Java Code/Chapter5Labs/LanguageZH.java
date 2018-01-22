@@ -20,12 +20,26 @@ public class LanguageZH implements UserPrompts {
         System.out.print("\u952e\u5165\u9009\u9879:  "); // Enter Option:
         selection = invalue.nextInt();
         if ((selection < 0) || (selection > 5)) {
-            System.out.println("\u65e0\u6548\u7684\u9009\u578b,\u9ed8\u8ba4\u9009\u9879\u4e00");
+            System.out.println("\u65e0\u6548\u7684\u9009\u578b\uff0c\u9009\u9879\u9ed8\u8ba4\u4e00");
             selection = 1;
         }
         return selection;
     }
 
+    public int langMenu() {
+         int langSel = 1;
+         System.out.println("\n\u66f4\u6539\u8bed\u008a");
+         System.out.println("English    1");
+         System.out.println("\u4e2d\u6587       2");
+         System.out.println("Deutsch    3");
+         System.out.println("\u952e\u5165\u9009\u9879: ");
+         langSel = invalue.nextInt();
+         if ((langSel < 1) || (langSel > 3)) {
+             System.out.println("\u65e0\u6548\u7684\u9009\u578b\uff0c\u9ed8\u8ba4\u662f\u82f1\u6587");
+             langSel = 1;
+         }
+         return langSel;
+    }
     //	@Override
     public int idSwapNrs(int[] intlist) {
         int itemindex = 0;

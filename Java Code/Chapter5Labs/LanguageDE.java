@@ -8,30 +8,45 @@ public class LanguageDE implements UserPrompts {
     public int menu() {
         int selection = 1;
 
-        System.out.println("\nChapter 5 Demo Program");
-        System.out.println("Action                   Option");
-        System.out.println("Swap two numbers:           1");
-        System.out.println("Swap two numbers in array:  2");
-        System.out.println("Change Language:            3");
-        System.out.println("Reload array:               4");
-        System.out.println("Print array:                5");
-        System.out.println("Quit:                       0");
-        System.out.print("Enter Option:  ");
+        System.out.println("\nKapitel 5 Demoprogramm");
+        System.out.println("Aktion                   Möglichkeit");
+        System.out.println("Vertausche zwei Zahlen:                 1");
+        System.out.println("Vertausche zwei Zahlen in einem Array:  2");
+        System.out.println("Sprache ändern:                         3");
+        System.out.println("Array neu laden:                        4");
+        System.out.println("Array drucken:                          5");
+        System.out.println("Aufhören:                               0");
+        System.out.print("Option eingeben:  ");
         selection = invalue.nextInt();
         if ((selection < 0) || (selection > 5)) {
-            System.out.println("Invalid choice, defaulting to Swap Two Numbers");
+            System.out.println("Ungültige Auswahl, standardmäßig auf Option eins");
             selection = 1;
         }
         return selection;
     }
 
+    public int langMenu() {
+         int langSel = 1;
+         System.out.println("\nSprache ändern");
+         System.out.println("English    1");
+         System.out.println("\u4e2d\u6587       2");
+         System.out.println("Deutsch    3");
+         System.out.println("Option eingeben: ");
+         langSel = invalue.nextInt();
+         if ((langSel < 1) || (langSel > 3)) {
+             System.out.println("Ungültige Auswahl, standardmäßig auf Englisch");
+             langSel = 1;
+         }
+         return langSel;
+    }
+
     //	@Override
     public int idSwapNrs(int[] intlist) {
         int itemindex = 0;
-        System.out.print("\n  Enter index of number to be swapped: ");
+        System.out.print("\n  Geben Sie den Index der auszutauschenden Nummer ein: ");
         itemindex = invalue.nextInt();
         if ((itemindex < 0) || (itemindex > 19)) {
-            System.out.println("Invalid entry, defaulting to index 3");
+            System.out.println("Ungültiger Eintrag, standardmäßig auf Index 3 gesetzt");
             itemindex = 3;
         }
         return itemindex;
@@ -44,12 +59,12 @@ public class LanguageDE implements UserPrompts {
     } // end of header string
 
     public String beforeSwap() {
-        String localstring = "\n ...Before Swap...";
+        String localstring = "\n ...Vor dem Tausch...";
         return localstring;
     } // end of beforeSwap
 
     public String afterSwap() {
-        String localstring = "\n ...After Swap...";
+        String localstring = "\n ...Nach dem Tausch...";
         return localstring;
     } // end of afterSwap
 
