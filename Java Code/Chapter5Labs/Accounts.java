@@ -4,27 +4,53 @@
 // A bank account class with methods to deposit to, withdraw from,
 // change the name on, charge a fee to, and print a summary of the account.
 //*******************************************************
-
-public class Account
+import java.util.Random;
+public class Accounts
 {
      private double balance;
      private String name;
-     private long acctNum;
+     private int accNum;
+     private static int numAccounts;
+     public Random rng = new Random();
+
 
      //----------------------------------------------
      //Constructor -- initializes balance, owner, and account number
      //----------------------------------------------
-     public Account(double initBal, String owner, long number)
+     public Accounts(double initBal, String owner, int num)
      {
           balance = initBal;
           name = owner;
-          acctNum = number;
+          accNum = num;
+          numAccounts++;
      } // end of Account
 
      //----------------------------------------------
      // Checks to see if balance is sufficient for withdrawal.
      // If so, decrements balance by amount; if not, prints message.
      //----------------------------------------------
+     public static int getNumAccounts()
+     {
+          return numAccounts;
+     }
+
+     public void close()
+     {
+          this.name += "–CLOSED";
+          this.balance = 0;
+          numAccounts--;
+     }
+
+     public Accounts consolidate(Accounts x)
+     {
+          double newBal = this.balance + x.balance;
+          Accounts conAcc = this;
+          if (this.accNum != x.accNum) {
+               conAcc = new Accounts(newBal, this.name, rng.nextInt(100000));
+          }
+          return conAcc;
+     }
+
      public void withdraw(double amount)
      {
           if (balance >= amount)
@@ -55,7 +81,7 @@ public class Account
      //----------------------------------------------
      public String toString()
      {
-          return ("Name: " + name + "; Account number: " + acctNum + "; Balance: " + balance);
+          return ("Name: " + name + "; Balance: " + balance);
      } // end of toString
 
      //----------------------------------------------

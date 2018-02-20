@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public class Quadratic {
   public static void main(String[] args) {
-    double a, b, c, discriminant, outPos, outNeg;
+    /*double a, b, c, discriminant, outPos, outNeg;
     Scanner scan = new Scanner(System.in);
     DecimalFormat fmt = new DecimalFormat("##.###");
 
@@ -25,7 +25,10 @@ public class Quadratic {
     outNeg = ((0 - b) - Math.sqrt(discriminant)) / (2 * a);
 
     System.out.println("The roots are " + fmt.format(outPos) + " and " + fmt.format(outNeg));
-    }
-
+}*/
+String s1 = "James Gosling";
+String s2 = "James Gosling";
+if (s1.equals(s2))
+     System.out.print("help");
 } // main
 } // class
