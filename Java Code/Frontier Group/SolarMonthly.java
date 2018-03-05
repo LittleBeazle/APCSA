@@ -49,13 +49,12 @@ public class SolarMonthly {
 		         BufferedReader br = new BufferedReader(new FileReader(fileName));
 
 		         // strip header lines
-	             for (int cnt = 0; cnt < hdrlines; cnt++) thisLine[cnt] = br.readLine();
+	              for (int cnt = 0; cnt < hdrlines; cnt++) thisLine[cnt] = br.readLine();
 		         for (int cnt = 0; cnt < filelines; cnt++)
 		         {
 		        	    thisLine[cnt] = br.readLine();
-
 		         }   // end of for
-		      }catch(Exception e){
+		      } catch(Exception e){
 		         e.printStackTrace();
 		      }  // end of catch
 	      return thisLine;
@@ -63,12 +62,12 @@ public class SolarMonthly {
 
 	public static void loadArrays(String[] lines, int days, double[] NOX, double[] CO2, double[] SO2, double[] PWR)
 	{
-		 String cvsSplitBy = ",";
+	   String cvsSplitBy = ",";
         for (int cnt = 0; cnt < days; cnt++)
         {
-        	   String[] parsedLine = null;
-           parsedLine = lines[cnt].split(cvsSplitBy);
-           // this line avoids problem with NaN measurements
+        	   String[] parsedLine = new String[days];
+             parsedLine = lines[cnt].split(cvsSplitBy);
+             // this line avoids problem with NaN measurements
 
        	   PWR[cnt] = Double.valueOf(parsedLine[ACPOSIT]);
        	   NOX[cnt] = Double.valueOf(parsedLine[NOXPOSIT]);
@@ -157,14 +156,14 @@ public class SolarMonthly {
 			     coeffb_co2 = 0;
 			 for (int i = 0; i < nrdays; i++)
 			 {
-				pwrsum = pwrsum + ACPWR_array[i];
-				noxsum = noxsum + NOX_array[i];
-				co2sum = co2sum + CO2_array[i];
-				so2sum = so2sum + SO2_array[i];
-				pwrsq = pwrsq + Math.pow(ACPWR_array[i], 2);
-				pwrnoxprod = pwrnoxprod + (ACPWR_array[i]) * NOX_array[i];
-				pwrco2prod = pwrco2prod + (ACPWR_array[i]) * CO2_array[i];
-				pwrso2prod = pwrso2prod + (ACPWR_array[i]) * SO2_array[i];
+				pwrsum += ACPWR_array[i];
+				noxsum += NOX_array[i];
+				co2sum += CO2_array[i];
+				so2sum += SO2_array[i];
+				pwrsq  += Math.pow(ACPWR_array[i], 2);
+				pwrnoxprod += (ACPWR_array[i]) * NOX_array[i];
+				pwrco2prod += (ACPWR_array[i]) * CO2_array[i];
+				pwrso2prod += (ACPWR_array[i]) * SO2_array[i];
 			 }  // end of for
 	         pwravg = pwrsum / nrdays;
 	         System.out.println("Average power is: " + coeff.format(pwravg) + " KWatts");
@@ -176,16 +175,16 @@ public class SolarMonthly {
 			 System.out.println("CO2 Coefficient");
 	//		 System.out.println("Y-intercept: " + coeff.format(coeffa_co2));
 			 System.out.println("Pounds CO2 per kWhr: " + coeff.format(coeffb_co2));
-             coeffa_nox = ((noxsum * pwrsq) - (pwrsum * pwrnoxprod))/denominator;
-             coeffb_nox = (nrdays * pwrnoxprod - pwrsum * noxsum)/denominator;
-             System.out.println("NOx Coefficient");
-             System.out.println("Pounds NOx per kWhr: " + coeff.format(coeffb_nox));
-	         coeffa_so2 = ((so2sum * pwrsq) - (pwrsum * pwrso2prod))/denominator;
-	         coeffb_so2 = (nrdays * pwrso2prod - pwrsum * so2sum)/denominator;
-	          System.out.println("SO2 Coefficient");
-	          System.out.println("Pounds SO2 per kWhr: " + coeff.format(coeffb_so2));
-		System.out.println("\n Estimating Reductions");
-		System.out.println("  Enter Nr Panels to be added: ");
+                coeffa_nox = ((noxsum * pwrsq) - (pwrsum * pwrnoxprod))/denominator;
+                coeffb_nox = (nrdays * pwrnoxprod - pwrsum * noxsum)/denominator;
+                System.out.println("NOx Coefficient");
+                System.out.println("Pounds NOx per kWhr: " + coeff.format(coeffb_nox));
+	           coeffa_so2 = ((so2sum * pwrsq) - (pwrsum * pwrso2prod))/denominator;
+	           coeffb_so2 = (nrdays * pwrso2prod - pwrsum * so2sum)/denominator;
+	           System.out.println("SO2 Coefficient");
+	           System.out.println("Pounds SO2 per kWhr: " + coeff.format(coeffb_so2));
+	           System.out.println("\n Estimating Reductions");
+		      System.out.println("  Enter Nr Panels to be added: ");
 
 
 	   }  // end of main

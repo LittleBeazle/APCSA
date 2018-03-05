@@ -15,6 +15,8 @@ public class OrbitsGUI extends JFrame
 
      public JButton main1, main2, main3, main4, main5;
 
+     private static final long serialVersionUID = 42l;
+
      public static JButton[] powOptions = new JButton[3];
      public static JButton[] selOptions = new JButton[5];
      public static JButton[] orbOptions = new JButton[3];

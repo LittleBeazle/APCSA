@@ -16,6 +16,7 @@ public class PhysicsGUI extends JFrame
   //** Calculator for parameters of object in motion
   //************************************************
 
+  private static final long serialVersionUID = 42l;
   public JLabel angle, initVel, maxAlt, maxRange;
   public JTextField angleBox, initVelBox, altBox, rangeBox;
   public JButton CalculateButton;
