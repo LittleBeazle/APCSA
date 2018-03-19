@@ -10,7 +10,6 @@ public class Sorting   {
      public static int[] intlist = new int[ARRAYSIZE];
 
      public static void SelectionSort(int[] arr)   {
-          //Arrays.sort(arr);
           int minIndex, temp;
           long sTime = System.currentTimeMillis();
           for (int i = 0; i < arr.length; i++) {
