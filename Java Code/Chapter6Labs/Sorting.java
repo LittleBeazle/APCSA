@@ -65,16 +65,25 @@ public class Sorting   {
      public static int BinarySearch(int[] arr, int x)   {
           int min = 0;
           int max = arr.length - 1;
+          int counter = 0;
 
           while (min <= max) {
                int mid = (min + max) / 2;
-               if (intlist[mid] == x)
+               if (intlist[mid] == x)   {
+                    counter++;
+                    System.out.println(counter + " comparisons");
                     return mid;
-               if (intlist[mid] > x) // x less than mid
+               }
+               if (intlist[mid] > x)   {   // x less than mid
                     max = mid - 1;
-               else if (intlist[mid] < x)// x greater than mid
+                    counter++;
+               }
+               else if (intlist[mid] < x)   {   // x greater than mid
                     min = mid + 1;
+                    counter++;
+               }
           }
+          System.out.println(counter + " comparisons");
           return -1;
      }
 
