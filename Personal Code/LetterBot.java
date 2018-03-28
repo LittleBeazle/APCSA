@@ -1,27 +1,26 @@
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.awt.AWTException;
 
 public class LetterBot   {
-     public Timer t;
-     public Robot beepBoop = new Robot();
-     public LetterBot()  {
+     public static void main(String[] args) throws AWTException {
+          Timer t;
+          long period = 7000;
           t = new Timer();
-          t.schedule(Spam(), 0.7);
-     }
+          Robot beepBoop = new Robot();
 
-     class Spam extends TimerTask  {
-          public void run()   {
-               beepBoop.keyPress(VK_A);
-               beepBoop.keyRelease(VK_A);
-               t.cancel();
-          }
-     }
+          while (true)   {
+               t.schedule(new TimerTask()  {
+                              public void run()   {
+                                   beepBoop.keyPress(KeyEvent.VK_A);
+                                   beepBoop.keyRelease(KeyEvent.VK_A);
+                                   beepBoop.keyPress(KeyEvent.VK_ENTER);
+                                   beepBoop.keyRelease(KeyEvent.VK_ENTER);
+                              } // end of run
+                    }, period);
+          } // end of while
+     } // end of main
 
-     public static void main(String[] args) {
-          while (True)   {
-               LetterBot();
-          }
-     }
-
-}
+} // end of class
