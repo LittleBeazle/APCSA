@@ -20,9 +20,14 @@ public class Square {
           System.out.println("Which row would you like to sum?");
           int sel = inval.nextInt();
           int total = 0;
-          for (int i = 0; i < COLUMNSIZE; i++) {
-               total += intlist[sel][i];
+
+          if (sel < 0 || sel > 14) {
+               System.out.println("Invalid selection.");
           }
+          else {
+
+          }
+
           return total;
      }
 
@@ -30,9 +35,15 @@ public class Square {
           System.out.println("Which column would you like to sum?");
           int sel = inval.nextInt();
           int total = 0;
-          for (int i = 0; i < ROWSIZE; i++) {
-               total += intlist[i][sel];
+          if (sel < 0 || sel > 14) {
+               System.out.println("Invalid selection.");
           }
+          else {
+               for (int i = 0; i < ROWSIZE; i++) {
+                    total += intlist[i][sel];
+               }
+          }
+
           return total;
      }
 
@@ -75,7 +86,7 @@ public class Square {
                System.out.printf("Max value %d found at indexes ", max);
                for (int y = 0; y < rowList.length - 1; y++)
                     System.out.printf("[%d, %d], ", rowList[y], colList[y]);
-               System.out.printf("and [%d, %d]\n", rowList[rowList.length -1], colList[colList.length - 1]);
+               System.out.printf("and [%d, %d]\n", rowList[rowList.length - 1], colList[colList.length - 1]);
 
           }
           else if (counter == 1)
@@ -97,14 +108,19 @@ public class Square {
           int sel = inval.nextInt();
           int[][] tempCol = new int[1][ROWSIZE];
 
-          for (int i = 0; i < ROWSIZE; i++)  {
-               tempRow[i] = intlist[sel][i];
-               tempCol[0][i] = intlist[i][sel];
+          if (sel < 0 || sel > 14) {
+               System.out.println("Invalid selection.");
           }
+          else {
+               for (int i = 0; i < ROWSIZE; i++)  {
+                    tempRow[i] = intlist[sel][i];
+                    tempCol[0][i] = intlist[i][sel];
+               }
 
-          for (int i = 0; i < ROWSIZE; i++)  {
-               intlist[sel][i] = tempCol[0][i];
-               intlist[i][sel] = tempRow[i];
+               for (int i = 0; i < ROWSIZE; i++)  {
+                    intlist[sel][i] = tempCol[0][i];
+                    intlist[i][sel] = tempRow[i];
+               }
           }
      }
 
