@@ -4,7 +4,7 @@
 // A class that holds a dog's name and can make it speak.
 //
 // ****************************************************************
-public class Dog    {
+public abstract class Dog    {
      protected String name;
      // ------------------------------------------------------------
      // Constructor -- store name
@@ -24,4 +24,6 @@ public class Dog    {
      public String speak()    {
           return "Woof";
      }
+
+     public abstract int avgBreedWeight();
 }
